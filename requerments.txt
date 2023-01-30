@@ -1,0 +1,5 @@
+django - python
+pillow - python
+mysqlconnect - python
+virutualenv if needed
+done good to go............

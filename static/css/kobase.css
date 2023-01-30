@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Aboreto", cursive;
+  font-weight: 600;
+}
+.control {
+  position: relative;
+}
+.topbox {
+  width: 100%;
+  background: rgb(0, 53, 255);
+  background: linear-gradient(
+    298deg,
+    rgba(0, 53, 255, 0.9221813725490196) 53%,
+    rgba(112, 178, 255, 1) 68%
+  );
+  z-index: 999;
+  position: sticky;
+  top: 0px;
+  border-bottom: 10px solid #ffff;
+}
+.rightbox {
+  background-color: rgba(218, 231, 255, 0.598);
+  min-height: 1170px;
+  width: 973px;
+  position: absolute;
+  left: 290px;
+  top: 65px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  z-index: 0;
+  border-radius: 15px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+
+
+}
+.leftbox {
+  background: rgb(169, 187, 255);
+  background: linear-gradient(
+    298deg,
+    rgba(169, 187, 255, 0.966999299719888) 40%,
+    rgba(112, 178, 255, 1) 68%
+  );
+  height: 200vmin;
+  width: 270px;
+  z-index: -1;
+  border-radius: 0px 15px 15px 0px;
+  
+}
+.topnav input[type="submit"] {
+  border: none;
+  padding: none;
+  background: none;
+  display: inline;
+  height: 50px;
+  font-size: 15px;
+  margin-left: 20px;
+  height: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.topnav .buttonstop input[type="submit"]:hover {
+  color: #ffff;
+}
+.buttonstop {
+  margin-left: 900px;
+}
+
+.topactive {
+  color: #ffff;
+}
+.logo {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: -25px;
+  left: 25px;
+}
+.logotext {
+  position: absolute;
+  top: 17px;
+  left: 120px;
+  color: rgb(2, 1, 68);
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+
+.logocenter {
+  position: absolute;
+  top: 17px;
+  left: 550px;
+  color: rgb(2, 1, 68);
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+.leftbox input[type="submit"] {
+  margin-top: 35px;
+  padding: 5px;
+  font-size: 20px;
+  width: 90%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #ffff;
+  margin-left: 10px;
+  border-radius: 15px;
+  font-weight: bolder;
+}
+
+.leftbox input[type="submit"]:hover {
+  background-color: aliceblue;
+  color: black;
+  transition: all ease 0.8s;
+}
+.leftbox input[type="submit"].leftactive {
+  color: black;
+}
+
+.sup{
+  min-height: 300px;
+  width: 600px;
+  background-color: aliceblue;
+  margin-left: 200px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ 
+}
+
+.toptext {
+  padding-top: 10px;
+  color: blue;
+}
+.supdetails {
+  margin-top: 40px;
+  line-height: 25px;
+  letter-spacing: 4px;
+  word-spacing: 5px;
+}
+.leftbox a {
+  border: none;
+  padding: none;
+  background: none;
+  height: 50px;
+  font-size: 15px;
+  margin-left: 20px;
+  display: block;
+  height: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-decoration: none;
+  color: aliceblue;
+  padding: 15px;
+
+  margin-right: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+.leftbox a:hover {
+  background-color: #ffff;
+  color: #000;
+  transition: all ease 0.5s;
+}
+
+.leftbox .inac {
+  color: #000;
+}
+
+a{
+  text-decoration: none;
+}
+
+.sup2{
+  min-height: 300px;
+  width: 500px;
+  background-color: aliceblue;
+  margin-left: 0px;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  
+
+}
+
+.topush{
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.box{
+  position: absolute;
+  min-height: 400px;
+  min-width: 800px;
+  left :300px;
+  top: 100px;
+  background-color: rgb(214, 218, 255);
+  border-radius: 15px;
+}
+
+.inputs{
+  min-height: 40px;
+  min-width: 200px;
+  padding: 40px;
+  margin: 50px;
+  
+
+
+}
+
+input{
+height: 40px;
+text-align: center;  
+border-radius: 15px;
+ margin: 5px; 
+ border: none;
+ outline: none;
+
+}
+
+.inputs input[type='submit']{
+  width: 150px;
+  background: rgb(255, 175, 175);
+}
+
+.inputs input[type='submit']:hover{
+  background: rgb(255, 74, 74);
+}
+
+.peru{
+  margin-left: 100px;
+  margin-bottom: 5px;
+}
+
+.apptoptxt{
+  text-align: center;
+  padding: 5px;
+  background-color: antiquewhite;
+}
+
+.apsub{
+  background: rgb(245, 197, 197);
+}
+
+.apsub:hover{
+  background-color: rgb(255, 149, 146);
+  transition: all ease .5s;
+}
+
+.deny{
+  min-height: 400px;
+  background: rgb(215, 213, 255);
+  width: 750px;
+
+}

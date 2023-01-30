@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/kobase.css' %}" />
+    <style></style>
+  </head>
+  <body>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="control">
+        <div class="topbox">
+          <div class="topnav">
+            <img src="{% static 'img/kohomelogo.png'%}" alt="" class="logo" />
+            <div class="logotext">KOKO BANK</div>
+            {%block content%}
+            {%endblock content%}
+    </form>
+  </body>
+</html>

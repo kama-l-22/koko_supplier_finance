@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANK sign-in</title>
+    <style>
+
+        *
+        {
+            font-family: 'Bakbak One', cursive;
+    font-family: 'Prompt', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Yeon Sung', cursive;
+
+        }
+        form{
+            width: 500px;
+            height: 500px;
+            margin: 75px auto;
+            background-color: #a8a8fa;
+            border-radius: 10px 35px 10px 35px;           
+        }
+        input[type = 'text'],input[type = 'password'],input[type='email']{
+            width: 170px;
+            height: 35px;
+            margin: 5px;
+            margin-top: 10px;
+            margin-left: 160px;
+            text-align: center;
+            border-radius: 20px;
+            border: none;
+            font-size: large;
+        }
+        input[type='submit']{
+            background-color: #ffff;
+            color: #a8a8fa;
+            border: none;
+            scale: 150%;
+            margin-left: 220px;
+            margin-top: 30px;
+            border-radius: 10px;
+            font-size: larger;
+
+        }
+       
+            .text{
+                font-size: 25px;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 5px;
+                padding-top: 20px;
+                color: #ffff;
+            }
+      
+    </style>
+</head>
+<body>
+   
+   <form action="" method="post">
+    {% csrf_token %} 
+    <div class="text">
+        SIGN - IN AS A CLIENT
+    </div>
+
+    <input type="text" placeholder="UserName" name="username"><br>
+
+    
+    <input type="text" name="firstname" placeholder="FirstName"><br>
+
+    <input type="text" name="lastname" placeholder="lastName"><br>
+
+    <input type="email" name="email" placeholder="Email"><br>
+
+    <input type="text" name="cus_id" placeholder="Client Id"><br>
+    <input type="text" name="loanid" placeholder="Loan Id"><br>
+    
+    <input type="password" placeholder="Password" name="pword"><br>
+
+    <input type="submit">
+    </form>
+</body>
+</html>

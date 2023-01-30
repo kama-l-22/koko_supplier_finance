@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank-Home</title>
+    <style>
+      * {
+        font-family: "Bakbak One", cursive;
+        font-family: "Prompt", sans-serif;
+        font-family: "Source Code Pro", monospace;
+        font-family: "Yeon Sung", cursive;
+      }
+
+      .com {
+        display: flex;
+      }
+      .box {
+        min-height: 460px;
+        width: 1150px;
+        margin: 50px auto;
+        background-color: #a8a8fa;
+        border-radius: 15px;
+      }
+      .text {
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 5px;
+        padding-top: 20px;
+        color: #ffff;
+      }
+      .box1 {
+        background-color: #ffff;
+        width: 650px;
+        min-height: 370px;
+        max-height: 370px;
+        margin: 5px;
+        margin-left: 50px;
+        overflow-y: scroll;
+        border-radius: 20px;
+        text-align: center;
+      }
+      .box2 {
+        background-color: #ffff;
+        background-color: #ffff;
+        min-width: 320px;
+        min-height: 370px;
+        max-height: 370px;
+        margin: 5px;
+        margin-left: 50px;
+        overflow-y: scroll;
+        border-radius: 20px;
+      }
+
+      .box1::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      .box1::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+      }
+
+      .box1::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0);
+        outline: 1px solid rgba(255, 255, 255, 0);
+      }
+
+      .box2::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      .box2::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+      }
+
+      .box2::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0);
+        outline: 1px solid rgba(255, 255, 255, 0.002);
+      }
+      .buttons input[type="submit"] {
+        text-decoration: none;
+        color: #a8a8fa;
+        padding: 5px;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        margin-top: 20px;
+        margin: 10px auto;
+        text-align: center;
+        scale: 125%;
+        border-radius: 15px;
+        box-shadow: 3px 3px 1px 1px rgb(105, 105, 105);
+        border: none;
+      }
+      .buttons input[type="submit"]:hover {
+        scale: 145%;
+        transition: all 0.2s;
+      }
+      .inbox {
+        text-align: center;
+        width: 80%;
+        height: 80%;
+        background-color: rgb(223, 215, 250);
+        margin: 30px auto;
+        border: dotted;
+      }
+      .inbox p {
+        margin: 30px;
+      }
+
+      .subox{
+        background-color: #bcbcfa;
+        border-radius: 20px;
+        margin-right: 100px;
+        margin-left: 100px;
+        margin-top: 40px;
+
+      }
+      .sbut{
+        margin-top: 1px;
+        padding-top: 20px;
+      }
+
+      .submitbut{
+        background-color: #897aff;
+        border: none;
+        color: rgb(19, 19, 19);
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!--FOR THE CLIENT PAGE-->
+    {%if isis == 'client'%}
+    <div class="box">
+      <p class="text">
+        WELCOME <span style="color: black">{{user.username}}({{isis}})</span> TO
+        KOKO BANK
+      </p>
+      
+      <div class="com">
+        <div class="box1">
+          <h2>YOUR APPROVED INVOICES</h2>
+          {% for invoice in app_in %}
+          <div class="inbox">
+            <p>NAME : {{invoice.name}}<br /></p>
+            <p>AMOUNT : {{invoice.amount}} <br /></p>
+            <p>APPROVED BY :{{invoice.approved_by}} <br /></p>
+            <p>CUSTOMER ID : {{invoice.cus_id}} <br /></p>
+            <p>SUPPLIER ID : {{invoice.sup_id}}<br /></p>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="box2">
+          <div class="buttons">
+            <form action="#" method="post">
+              {% csrf_token %}
+              <input type="submit" name="Cedit" value="PROFILE" /><br /><br />
+              <input
+                type="submit"
+                name="Culoan"
+                value="YOUR INVOICE"
+              /><br /><br />
+              <input type="submit" name="Clogout" value="LOG OUT" /><br /><br />
+              <input
+                type="submit"
+                name="Casloan"
+                value="AKS INVOICE"
+              /><br /><br />
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!--END OF CLIENT PAGE -->
+
+    <!-- FOR SUPPLIER PAGE -->
+    {% elif isis == 'bank' %}
+          bank
+    {% elif isis == 'supplier' %}
+    <div class="box">
+      <p class="text">
+        WELCOME <span style="color: black">{{user.username}}({{isis}})</span> TO
+        KOKO BANK
+      </p>
+      
+      <div class="com">
+        <div class="box1">
+          <h2> REQUESTED INVOICES FROM CLIENT</h2>
+
+          {% for data in re_data%}
+          <center>
+          <div class="subox">
+            <form action="" method="post">
+              {% csrf_token %}
+                <label for="clientname"> NAME   :</label>
+                <input type="text" value="{{data.name}}" name="clientname" class="sbut"><br><br>
+
+                <label for="amount">AMOUNT    :</label>
+                <input type="text" value="{{data.amount}}" name="amount" class = "sbut"><br><br>
+
+                <label for="ap_by">APPROVED BY:</label>
+                <input type="text" value="{{user.username}}" name="ap_by" class = "sbut"><br><br>
+
+                <label for="cusid"> CUSTOMER ID :</label>
+                <input type="text" value="{{data.cus_id}}" name="cusid" class = "sbut"><br><br>
+
+                <label for="supid">SUPPLIER ID :</label>
+                <input type="text" value="{{users.sup_id}}" name="supid" class = "sbut"><br><br>
+
+                <input type="submit" name="submitre" value="APPROVE" class="submitbut"> <input class="submitbut" type="submit" name="subde" value="DENY">
+              </form>
+          </div></center>
+          {% endfor %}
+          
+        </div>
+        <div class="box2">
+          <div class="buttons">
+            <form action="#" method="post">
+              {% csrf_token %}
+              <input type="submit" name="Cedit" value="EDIT CLIENT" /><br /><br />
+              <input type="submit" name="Culoan"value="ADD CLIENT"/><br /><br />
+              <input type="submit" name="Clogout" value="REMOVE CLEINT" /><br /><br />
+              <input type="submit"name="Casloan"value="PROFILE"/><br /><br />
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    {%endif%}
+  </body>
+</html>

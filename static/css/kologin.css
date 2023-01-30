@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Aboreto', cursive;
+    border-radius: 15px;
+}
+
+.container {
+    background: rgb(125, 152, 255);
+    background: linear-gradient(298deg, rgba(125, 152, 255, 1) 34%, rgba(140, 122, 255, 0.9588877787443102) 94%);
+    margin: 80px auto;
+    width: 800px;
+    min-height: 400px;
+    position: relative;
+}
+
+.box1 {
+
+    height: 370px;
+    width: 340px;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    background-color: #a29bfe;
+    background-size: cover;
+
+}
+
+.box2 {
+    background-color: #ffff;
+    height: 370px;
+    width: 340px;
+    position: absolute;
+    top: 10px;
+    left: 420px;
+    background-image: url();
+}
+
+.inform input[type='text'],
+.inform input[type='password'] {
+    border-radius: 15px;
+    height: 10px;
+    font-weight: 700;
+}
+
+.inform input[type='submit'] {
+    margin-top: 20px;
+    margin-left: 75px;
+    color: #ffff;
+    font-weight: bold;
+    background-color: #a29bfe;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    scale: 110%;
+    padding: 5px;
+}
+
+.inform input[type='submit']:hover {
+
+
+    background: rgb(125, 152, 255);
+    background: linear-gradient(298deg, rgba(125, 152, 255, 1) 34%, rgba(140, 122, 255, 0.9588877787443102) 94%);
+    transition: all .5s;
+}
+
+h2 span {
+    margin-left: 80px;
+}
+
+h2 {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+
+.inform {
+    margin-left: 65px;
+    margin-top: 20px;
+
+}
+
+h4 {
+    margin-left: 95px;
+    margin-top: 13px;
+    font-size: 10px;
+}
+
+h6 {
+    margin-top: 6px;
+    margin-left: 40px;
+    font-size: small;
+}
+.signinbutton{
+    position: absolute;
+    margin-left: 75px;
+    color: #ffff;
+    font-weight: bold;
+    background-color: #a29bfe;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    scale: 110%;
+    padding: 5px;
+    margin-left: 130px;
+    margin-top: 280px;
+    top: 20px;
+}
+a{
+    text-decoration: none;
+  
+}
+.signinbutton:hover {
+
+
+    background: rgb(125, 152, 255);
+    background: linear-gradient(298deg, rgba(125, 152, 255, 1) 34%, rgba(140, 122, 255, 0.9588877787443102) 94%);
+    transition: all .5s;
+}
+.box4 {
+    /* Polygon 1 */
+
+    position: absolute;
+    min-width: 40px;
+    min-height: 38px;
+    left: 893px;
+    top: 353px;
+    background: rgb(125, 152, 255);
+    background: linear-gradient(298deg, rgba(125, 152, 255, 1) 34%, rgba(140, 122, 255, 0.9588877787443102) 94%);
+    border-radius: 6px;
+   
+}
+
+.box5 {
+    /* Polygon 1 */
+
+    position: absolute;
+    min-width: 40px;
+    height: 38px;
+    left: -150px;
+    top: 0px;
+
+    background: #849FFF;
+    background: rgb(125, 152, 255);
+    background: linear-gradient(298deg, rgba(125, 152, 255, 1) 34%, rgba(140, 122, 255, 0.9588877787443102) 94%);
+    border-radius: 50%;
+  
+}
+
+.form-group {
+    height: 28px;
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 700;
+
+}
+
+.form-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+    background: none;
+    border: 1px solid #a8c1ff;
+    outline: none;
+    font-weight: 700;
+
+
+    padding: 16px;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+
+.form-label {
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    color: #010101;
+    background-color: rgb(255, 255, 255);
+    padding: 0 6px;
+    font-size: 14px;
+    transition: .3s;
+    font-weight: 700;
+}
+
+.form-control:focus+.form-label {
+    top: -10px;
+    z-index: 10;
+    color: #1B66C9;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border: 1px solid #1B66C9;
+}
+
+.form-control:not(:focus):valid+label {
+    top: -10px;
+    z-index: 10;
+}
+
+.errortext{
+    font-size:10px;
+    color: rgb(107, 1, 1);
+    margin-top: 13px;
+    font-weight: 900;
+    margin-left: 5px;
+    padding: 3PX;
+}

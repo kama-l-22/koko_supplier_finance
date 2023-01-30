@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTER PAGE</title>
+    <link rel="stylesheet" href="{% static 'css/enter.css'%}">
+</head>
+<body>
+    <div class="box">
+        <div class="text">WELCOME TO THE KOKO BANK  </div>
+        <div class="buttons">
+            <a href="{% url 'logc'%}" title="login as a bank head">LOGIN</a><br>
+            
+        </div>
+        <div class="text">
+            OR REGESITER AS A NEW CLIENT <small>(only client can sign-in as his own)</small>
+            <div class="buttons">
+                <a href="{% url 'regc' %}" title="register as a new client">sign-in</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

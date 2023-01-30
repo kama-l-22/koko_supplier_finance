@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% extends 'KOKO_tmpl/kobase.html'%}
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/kbase.css' %}">
+
+</head>
+<body>
+    <body>
+        {% block content%}
+        <div class="logocenter">
+            {{userobject.first_name}}
+            {{userobject.last_name}}
+          </div>
+    
+    
+        <div class="buttonstop">
+            <input name="kohome" type="submit" value="HOME" class="firstsubmit topactive"/>
+            <input name="koabout" type="submit" value="ABOUT" class="" />
+            <input name="kocontact" type="submit" value="CONTACT" />
+            <input name="koprofile" type="submit" value="PROFILE" /></div></div></div>
+          
+            <div class="leftbox"> <form action="" method="post"> 
+                <a href="{% url 'kohome' %}"> go back</a>
+            </div>
+    
+            <div class="rightbox"> 
+                
+                {% for i in rin %}
+                <div class="sup">
+                    
+                        {% csrf_token %}
+                    <div class="toptext">{{i.Requested_by}}</div>
+                    <div class="supdetails">
+                    Supplier Code: <input type="text" value="{{i.Supplier_code}}" name="5"><br><br>
+                    Invoice number:<input type="text" value="{{i.Invoice_number}}" name="1"> <br><br>
+                    Invoice_date: <input type="date" value="{{i.Invoice_date }}" name="2"><small>{{i.Invoice_date}} </small><br><br>
+                    Requested_by:<input type="text" value="{{i.Requested_by}}" name="3">  <br><br>
+                    Invoice_amount:<input type="text" value="{{i.Invoice_amount}}" name="4"> <br><br>
+                    Currency:<input type="text" value="{{i.Currency}}" name="6"> <br><br>
+                    Verified by:<input type="text" name="7"><br><br>
+                    <input type="submit" name="sverf" value="SEND TO BANK" style="padding: 10px; background-color:rgb(255, 135, 135) ">
+                    <input type="submit" name="sdeny" value="don't send" style="padding: 10px; background-color:rgb(255, 120, 120) ">
+                    </div>
+                
+                </div>
+                {%endfor%}
+            
+            </div></form>
+        {%endblock%}
+<body>
+                        
+                    

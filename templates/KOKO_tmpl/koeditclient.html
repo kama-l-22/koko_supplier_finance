@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'KOKO_tmpl/kobase.html'%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    {% block content%}
+    <div class="logocenter">
+        {{userobject.first_name}}
+        {{userobject.last_name}}
+      </div>
+
+
+    <div class="buttonstop">
+        <input name="kohome" type="submit" value="HOME" class="firstsubmit topactive"/>
+        <input name="koabout" type="submit" value="ABOUT" class="" />
+        <input name="kocontact" type="submit" value="CONTACT" />
+        <input name="koprofile" type="submit" value="PROFILE" /></div></div></div>
+        <div class="body">
+        <div class="leftbox">
+            <a href="{% url 'kohome' %}">go back</a>
+        </div>
+        </div>
+        <div class="box">
+            <h2 style="margin: 10px;">{{error}}</h2>
+        {% for i in clients%}
+        <div class="inputs">
+        <form action="" method="post">
+            
+            {% csrf_token %}
+            <h3>{{i.username}}</h3>
+        
+            <input type="text" name="username" placeholder="USERNAME" id="sname" class="signininputs"  value = "{{i.username}}" readonly>
+            <input type="text" name="firstname" placeholder="FIRSTNAME" id="sfn" class="signininputs"  value = "{{i.first_name}}" required>
+            <input type="text" name="lastname" placeholder="LASTNAME" id="sln" class="signininputs"  value = "{{i.last_name}}" required>
+            <input type="email" name="email" placeholder="EMAIL" id="semail" class="signininputs"  value = "{{i.email}}" required>
+            <input type="text" name="phone" placeholder="MOBILE NUMBER" id="sphone" class="signininputs"  value = "{{i.Phone}}" required>
+            <input type="date" name="dob" placeholder="DATE OF BIRTH" id="sdob" class="signininputs" value = "{{i.DoB}}" required> <small>{{i.DoB}}</small>
+            <input type="text" name="gender" placeholder="GENDER" id="sgender" class="signininputs"  value = "{{i.Gender}}" required>
+            
+            <input type="submit" name="editv" value="edit">
+            <input type="submit" name="delete" value="delete">
+        </form>
+    </div>
+        {% endfor %}
+    </div>
+    </div>
+
+            
+    {% endblock content %}
+</body>
+</html>

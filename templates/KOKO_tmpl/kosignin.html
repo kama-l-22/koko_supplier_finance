@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> KOKO-SIGN >^< IN </title>
+    <style></style>
+    <link rel="stylesheet" href="{% static 'css/kosignin.css' %}">
+</head>
+<body>
+    <div class="con">
+        <div class="left">
+            <img src="{% static 'img/kosigninbg.png' %}" alt="" class="image">
+            <div class="text">You are in client register kindly fill out the details to become our cleint.</div>
+        </div>
+        <div class="right">
+            <div class="inputs">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <a href="{% url 'kologin' %}" class="login">LOGIN</a>
+                    <div class="error"><h3>{{message}}</h3></div>
+                    <input type="text" name="username" placeholder="USERNAME" id="sname" class="signininputs" required>
+                    <input type="text" name="firstname" placeholder="FIRSTNAME" id="sfn" class="signininputs" required>
+                    <input type="text" name="lastname" placeholder="LASTNAME" id="sln" class="signininputs" required>
+                    <input type="email" name="email" placeholder="EMAIL" id="semail" class="signininputs" required>
+                    <input type="text" name="phone" placeholder="MOBILE NUMBER" id="sphone" class="signininputs" required>
+                    <input type="date" name="dob" placeholder="DATE OF BIRTH" id="sdob" class="signininputs" required>
+                    <input type="text" name="gender" placeholder="GENDER" id="sgender" class="signininputs" required>
+                    <input type="password" name="password" placeholder="PASSWORD" id="spword" class="signininputs"required>
+                    <input type="text" name="clientid" id="sclientid" placeholder="CLIENT ID" class="signininputs" required>
+                    <input type="text" name="address" id="saddress" placeholder="ADDRESS" class="signininputs" required>
+                    <input type="submit" name="signinsubmit" value="WELCOME TO THE GROUP OF KOKO"  id ="ssubmit" class="signininputs">
+                    <a href="{% url 'kologin' %}" class="login">LOGIN</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

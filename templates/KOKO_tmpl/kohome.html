@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% extends 'KOKO_tmpl/kobase.html'%}
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/kbase.css' %}">
+</head>
+<body>
+    {% block content%}
+    <div class="logocenter">
+        {{userobject.first_name}}
+        {{userobject.last_name}}
+      </div>
+
+
+    <div class="buttonstop">
+        <input name="kohome" type="submit" value="HOME" class="firstsubmit topactive"/>
+        <input name="koabout" type="submit" value="ABOUT" class="" />
+        <input name="kocontact" type="submit" value="CONTACT" />
+        <input name="koprofile" type="submit" value="PROFILE" /></div></div></div>
+    {% if role == 'bank' %}   
+        <div class="leftbox"> <form action=""> 
+            <input type="submit" name="oursup" value="our suppliers">
+            <input type="submit" name="ourcli" value="our client">
+            <input type="submit" name="addcli" value="add client">
+            <input type="submit" name="editc" value="edit client">
+            <input type="submit" name = 'aproval' value="waiting invoices">
+            <input type="submit" name = 'apinap' value="approved invoices"></form>
+        </div>
+
+        <div class="rightbox"> 
+            
+           
+           
+
+            {% for i in approved %}
+            <div class="sup2">
+                <div class="toptext">{{i.Requested_by}}</div>
+                <div class="supdetails">
+                    <span style="color: rgb(19, 19, 61);">Supplier Code:</span> {{i.Supplier_code}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Invoice number:</span> {{i.Invoice_number}} <br><br>
+                <span style="color: rgb(167, 57, 203);"> Invoice_date:</span> {{i.Invoice_date }} <br><br>
+                <span style="color: rgb(22, 87, 178);"> Requested_by: </span> {{i.Requested_by}} <br><br>
+                <span style="color: rgb(19, 19, 61);"> Invoice_amount:</span> {{i.Invoice_amount}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Currency:</span> {{i.Currency}} <br><br>
+                <span style="color: rgb(167, 57, 203);"> Approved by :</span> {{i.Approved_by }} <br><br>
+               
+                </div>
+                </div>
+            {%endfor%} 
+            {% for i in approvals%}
+            <div class="apptoptxt">{{i.Requested_by }}</div>
+            <br>
+            <h2 class = "peru" >Verified_by</h2>
+            <input type="text" placeholder="Verified_by" name="Verified_by"  value="{{i.Verified_by}}">
+            <h2 class = "peru" >Requested_by</h2>
+            <input type="text" placeholder="Requested_by" name="Requested_by"value="{{i.Requested_by}}">
+            <h2 class = "peru" >Supplier_code</h2>
+            <input type="text" placeholder="Supplier_code" name="Supplier_code" value="{{i.Supplier_code}}">
+            <h2 class = "peru" >Invoice_number</h2>
+            <input type="text" placeholder="Invoice_number" name="Invoice_number" value="{{i.Invoice_number}}">
+            <h2 class = "peru" >Invoice_date</h2>
+            <input type="date" placeholder="Invoice_date" name="Invoice_date" value="{{i.Invoice_date}}">
+            <h2 class = "peru" >Invoice_amount</h2>
+            <input type="text" placeholder="Invoice_amount" name="Invoice_amount" value="{{i.Invoice_amount}}">
+            <h2 class = "peru" >Currency </h2>
+            <input type="text" placeholder="Currency" name="Currency" value="{{i.Currency}}">
+            <h2 class = "peru" >Approved_by</h2>
+            <input type="text" placeholder="Approved_by" name="Approved_by">
+            <input type="submit" name="appsubmit" class="apsub" value="APPROVE">
+            <input type="submit" name="apdeny" id="" class="apsub" value="Deny">
+            {%endfor%} 
+
+            {% for i in supplier%}
+            <div class="sup">
+                <div class="toptext">{{i.Username}}</div>
+                <div class="supdetails">
+                    <span style="color: rgb(19, 19, 61);"> username:</span> {{i.Username}} <br><br>
+                    <span style="color: rgb(81, 76, 232);"> usertype:</span> {{i.User_type}} <br><br>
+                    <span style="color: rgb(167, 57, 203);"> address:</span> {{i.Address}} <br><br>
+                    <span style="color: rgb(22, 87, 178);"> supplierid: </span> {{i.Supplier_id}} <br><br>
+                </div>
+
+            </div>
+            {% endfor %}
+           
+            {% for i in clients%}
+            <div class="topush">
+            <div class="sup2">
+                <div class="toptext">{{i.Username}}</div>
+                <div class="supdetails">
+                    <span style="color: rgb(19, 19, 61);"> username:</span> {{i.Username}} <br><br>
+                    <span style="color: rgb(81, 76, 232);"> usertype:</span> {{i.User_type}} <br>
+                    <span style="color: rgb(167, 57, 203);"> address:</span> {{i.Address}} <br>
+                    <span style="color: rgb(22, 87, 178);"> supplierid: </span> {{i.Client_id}}<br>
+                    
+                </div></div>
+            {% endfor %}
+            </div>
+            
+           
+            </div>
+            
+        </div>
+            
+    </div>
+
+
+
+
+
+
+    {% elif role == 'supplier'%}
+    <div class="leftbox"> <form action=""> 
+        <input type="submit" name="sourcli" value="view all invoice">
+        <input type="submit" name="seditcli" value="edit clients">
+        <input type="submit" name="saddcli" value="add client">
+        <input type="submit" name="verpend" value="request pay for client ">
+    </form>
+    <div class="rightbox">
+        
+        {% for i in approve%}
+        <div class="sup">
+            <div class="toptext">{{i.Requested_by}}<p>approved</p></div>
+            <div class="supdetails">
+                <span style="color: rgb(19, 19, 61);">Supplier Code:</span> {{i.Supplier_code}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Invoice number:</span> {{i.Invoice_number}} <br><br>
+                <span style="color: rgb(167, 57, 203);"> Invoice_request:</span> {{i.Invoice_request }} <br><br>
+                <span style="color: rgb(22, 87, 178);"> Invoice_request: </span> {{i.Invoice_request}} <br><br>
+                <span style="color: rgb(19, 19, 61);"> Invoice_amount:</span> {{i.Invoice_amount}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Currency:</span> {{i.Currency}} <br><br>
+                <span style="color: rgb(167, 57, 203);"> Approved by :</span> {{i.Approved_by }} <br><br>
+                <span style="color: rgb(22, 87, 178);"> Loan id: </span> {{i.Loan_id}} <br><br>
+            </div>
+        </div>
+        {%endfor%}
+        {% for i in denied%}
+        <div class="sup">
+            <div class="toptext">{{i.Invoice_number}}<p>denied</p></div>
+            <div class="supdetails">
+                <span style="color: rgb(19, 19, 61);"> client id:</span> {{i.Invoice_number}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Verified by:</span> {{i.Denied_by}} <br><br>
+            </div>
+        </div>
+    </div>
+      {%endfor%}
+
+    </div>
+    {%else%}
+    <div class="leftbox"> <form action=""> 
+        <a href="{% url 'kohome' %}">view invoices</a> 
+        <input type="submit" name="upload" value="upload invoices"></form></div>
+    <div class="rightbox">
+
+
+        {% if vena == "sona" %}
+        <div class="sup">
+            <form action="" method="post">
+                {% csrf_token%}
+                <input type="text" name="a" placeholder = 'Requested_by'>
+                <input type="text" name="b" placeholder = 'Supplier_code'>
+                <input type="text" name="c" placeholder = 'Invoice_number '>
+                <input type="date" name="d" placeholder = 'Invoice_date'>
+                <input type="text" name="e" placeholder = 'Invoice_amount'>
+                <input type="text" name="f" placeholder = 'Currency'>
+                <input type="submit" name = 'hgj' value="upload in voice">
+            </form></div>
+        {%endif%}
+        {% for i in poda%}
+        <div class="sup">
+            <div class="toptext">{{i.Requested_by}}<p>approved</p></div>
+            <div class="supdetails">
+                <span style="color: rgb(19, 19, 61);">Supplier Code:</span> {{i.Supplier_code}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Invoice number:</span> {{i.Invoice_number}} <br><br>
+                <span style="color: rgb(167, 57, 203);"> Invoice_request:</span> {{i.Invoice_request }} <br><br>
+                <span style="color: rgb(22, 87, 178);"> Invoice_request: </span> {{i.Invoice_request}} <br><br>
+                <span style="color: rgb(19, 19, 61);"> Invoice_amount:</span> {{i.Invoice_amount}} <br><br>
+                <span style="color: rgb(81, 76, 232);"> Currency:</span> {{i.Currency}} <br><br>
+                <span style="color: rgb(167, 57, 203);"> Approved by :</span> {{i.Approved_by }} <br><br>
+                <span style="color: rgb(22, 87, 178);"> Loan id: </span> {{i.Loan_id}} <br><br>
+            </div>
+        </div>
+        {%endfor%}
+        
+    </div>
+    {%endif%}
+    {% endblock content%}
+</body>
+</html>

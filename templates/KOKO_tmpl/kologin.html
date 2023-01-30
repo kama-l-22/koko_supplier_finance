@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% load static %}
+    <link rel="icon" href="koko.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOKO-LOGIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Bakbak+One&family=Prompt:wght@300&family=Source+Code+Pro:wght@200&family=Yeon+Sung&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static '\css\kologin.css' %}">
+
+    <style>
+        .box1{
+            background-image: url("{% static '\img\kologinbg.jpeg' %}");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box1"> </div>
+
+        <div class="box2">
+            <form action="" method="post">
+                {% csrf_token %}
+                <h2>WELCOME to koko <span style="color: #1B66C9;">login</span></h2>
+                <div class="inform">
+                
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="kologinusername" required>
+                        <label for="" class="form-label">UserName</label>
+                    </div>
+                        <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" required  id="txtPassword" name="kologinpassword">
+                        <label for="" class="form-label">Enter Your Password</label>
+                    </div>
+            
+                 
+
+
+                <input type="submit" value="login" name="kologin">
+                <h4>OR</h4></div>
+            </form>
+           
+                <a href="{% url 'kosignin' %}" name="kosign_in" class="signinbutton"> SIGN-IN</a>
+                <h6>OUR NEW USERS CAN SIGI-IN TO LOGIN </h6>
+            
+        </div>
+
+        <div class="box4"><div class="errortext">{{errormessage}}</div></div>
+        <div class="box5"></div>
+
+        </div>
+    </div>
+
+    
+</body>
+</html>

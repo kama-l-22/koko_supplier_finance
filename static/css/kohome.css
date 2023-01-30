@@ -1,0 +1,126 @@
+
+        
+            @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+        
+
+            *{
+                padding: 0px;
+                margin: 0px;
+                font-family: 'Aboreto', cursive;
+                font-weight: 600;
+                
+                
+            }
+            .control{
+                position: relative;
+                
+            }
+            .topbox{
+                width: 100%;
+                background: rgb(0,53,255);
+    background: linear-gradient(298deg, rgba(0,53,255,0.9221813725490196) 53%, rgba(112,178,255,1) 68%);
+                z-index: 999;
+                position: sticky;
+                top: 0px;
+                border-bottom: 10px solid #ffff;
+                
+            }
+            .rightbox{
+                background-color: rgba(218, 231, 255, 0.598);
+                min-height: 1170px;
+                width: 973px;
+                position: absolute;
+                left: 290px;
+                top: 65px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                z-index: -1;
+                border-radius:  15px 0px 0px 0px;
+                
+            }
+            .leftbox{
+                background: rgb(169,187,255);
+                background: linear-gradient(298deg, rgba(169,187,255,0.966999299719888) 40%, rgba(112,178,255,1) 68%);
+                height: 200vmin;
+                width: 270px;
+                z-index: -1;
+                border-radius:  0px 15px 15px 0px;
+                
+               
+            }
+            .topnav input[type = 'submit']{
+                border: none;
+                padding: none;
+                background: none;
+                display: inline;
+                height: 50px;
+                font-size: 15px;
+                margin-left: 20px;
+                height: 20px;
+                margin-bottom: 15px;
+                margin-top: 15px;
+            }
+    
+            .topnav .buttonstop input[type = 'submit']:hover{
+                color: #ffff;
+            }
+            .buttonstop{
+                margin-left: 900px;
+               
+                
+            }
+            
+            .topactive{
+               color: #ffff;
+            }
+            .logo{
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                top: -25px;
+                left: 25px;
+                
+            }
+            .logotext{
+                position: absolute;
+                top:17px;
+                left: 120px;
+                color: rgb(2, 1, 68);
+                letter-spacing: 5px;
+                font-weight: bolder;
+            }
+    
+            .logocenter{
+                position: absolute;
+                top:17px;
+                left: 550px;
+                color: rgb(2, 1, 68);
+                letter-spacing: 2px;
+                font-weight: bolder;
+            }
+    
+    
+            .leftbox input[type = 'submit']{
+                
+                margin-top: 35px;
+                padding: 5px;
+                font-size: 20px;
+                width: 90%;
+                background:none;
+                border: none;
+                outline: none;
+                color:#ffff;
+                margin-left: 10px;
+                border-radius: 15px;
+                font-weight: bolder;
+            }
+            
+            .leftbox input[type = 'submit']:hover{
+                background-color: aliceblue;
+                color: black;
+                transition: all ease .8s;
+            }
+            .leftbox input[type = 'submit'].leftactive{color: black;}
+                
+                
+            
+    
